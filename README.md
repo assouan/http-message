@@ -1,9 +1,9 @@
 # Assouan HTTP Message
 
-HTTP message objects for the A PHP libraries.
+HTTP response, headers and base message objects for the A PHP libraries.
 
 ```bash
 composer require assouan/http-message
 ```
 
-Requires PHP 8.4 or later.
+Requires PHP 8.5 or later.

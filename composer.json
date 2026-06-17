@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "A\\": "src/A/"
+            "A\\Http\\": "src/A/Http/"
         }
     }
 }
