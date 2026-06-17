@@ -57,6 +57,44 @@ class Message
 }
 ```
 
+## Request
+
+```php
+class Request extends Message
+{
+    protected(set) string $method;
+    protected(set) string $url;
+
+    public array $attributes;
+    public string $path;
+    public array $query;
+    public string $scheme;
+    public string $authority;
+    public string $host;
+    public int $port;
+
+    public function __construct(
+        string $method = 'GET',
+        string $url = '/',
+        string $version = '1.1',
+        Headers|array $headers = [],
+        string $body = '',
+        array $attributes = [],
+    );
+
+    public static function from_globals() : static;
+    public static function authority_for(string $host, int $port) : string;
+    public static function parse(string $packet) : static;
+    public static function try_parse(string $packet) : ?static;
+
+    public function with(string $name, mixed $value) : static;
+    public function attribute(string $name, mixed $default = null) : mixed;
+    public function target(bool $absolute = false) : string;
+    public function to_packet(bool $absolute = false) : string;
+    public function __toString() : string;
+}
+```
+
 ## Response
 
 ```php
