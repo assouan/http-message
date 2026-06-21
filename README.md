@@ -14,6 +14,7 @@ Requires PHP 8.5 or later.
 use A\Http\Response;
 
 return Response::redirect('/dashboard');
+return Response::html('<h1>Not found</h1>', 404);
 return Response::json_response(['ok' => true]);
 return Response::json_response(['error' => 'unauthorized'], 401);
 ```

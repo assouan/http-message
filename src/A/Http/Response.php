@@ -71,6 +71,15 @@ class Response extends Message
         );
     }
 
+    public static function html(string $body, int $status = 200) : static
+    {
+        return new static(
+            status: $status,
+            headers: ['Content-Type' => 'text/html; charset=utf-8'],
+            body: $body,
+        );
+    }
+
     public static function try_parse_packet(string $packet, bool $body_allowed = true) : ?array
     {
         $split = static::split_packet($packet);
