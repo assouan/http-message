@@ -15,6 +15,6 @@ use A\Http\Response;
 
 return Response::redirect('/dashboard');
 return Response::html('<h1>Not found</h1>', 404);
-return Response::json_response(['ok' => true]);
-return Response::json_response(['error' => 'unauthorized'], 401);
+return Response::json(['ok' => true]);
+return Response::json(['error' => 'unauthorized'], 401);
 ```
