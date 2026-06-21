@@ -7,3 +7,13 @@ composer require assouan/http-message
 ```
 
 Requires PHP 8.5 or later.
+
+## Helpers
+
+```php
+use A\Http\Response;
+
+return Response::redirect('/dashboard');
+return Response::json_response(['ok' => true]);
+return Response::json_response(['error' => 'unauthorized'], 401);
+```
