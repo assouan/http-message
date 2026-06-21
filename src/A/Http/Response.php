@@ -57,6 +57,11 @@ class Response extends Message
         return $packet[0] ?? null;
     }
 
+    public static function redirect(string $location, int $status = 302) : static
+    {
+        return new static(status: $status, headers: ['Location' => $location]);
+    }
+
     public static function try_parse_packet(string $packet, bool $body_allowed = true) : ?array
     {
         $split = static::split_packet($packet);
