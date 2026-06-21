@@ -62,7 +62,7 @@ class Response extends Message
         return new static(status: $status, headers: ['Location' => $location]);
     }
 
-    public static function json(mixed $data, int $status = 200) : static
+    public static function json_body(mixed $data, int $status = 200) : static
     {
         return new static(
             status: $status,
@@ -73,7 +73,7 @@ class Response extends Message
 
     public static function json_response(mixed $data, int $status = 200) : static
     {
-        return static::json($data, $status);
+        return static::json_body($data, $status);
     }
 
     public static function html(string $body, int $status = 200) : static
